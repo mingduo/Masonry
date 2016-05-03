@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4E55C331CD87CC000AB06BE /* UpdateConstraintView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E55C321CD87CC000AB06BE /* UpdateConstraintView.m */; };
+		F4E55C361CD8881C00AB06BE /* RemakeConstraintView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E55C351CD8881C00AB06BE /* RemakeConstraintView.m */; };
+		F4E55C391CD88C5900AB06BE /* UseConstantsView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E55C381CD88C5900AB06BE /* UseConstantsView.m */; };
+		F4E55C3C1CD88ED100AB06BE /* UseEdgesInsetView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E55C3B1CD88ED100AB06BE /* UseEdgesInsetView.m */; };
+		F4E55C3F1CD8A43A00AB06BE /* AspectFitWithRatioView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E55C3E1CD8A43A00AB06BE /* AspectFitWithRatioView.m */; };
 		F4EAE77A1CD440D700559214 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE7791CD440D700559214 /* main.m */; };
 		F4EAE77D1CD440D700559214 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EAE77C1CD440D700559214 /* AppDelegate.m */; };
 		F4EAE7851CD440D700559214 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EAE7841CD440D700559214 /* Assets.xcassets */; };
@@ -28,6 +33,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F4E55C311CD87CC000AB06BE /* UpdateConstraintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateConstraintView.h; sourceTree = "<group>"; };
+		F4E55C321CD87CC000AB06BE /* UpdateConstraintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateConstraintView.m; sourceTree = "<group>"; };
+		F4E55C341CD8881C00AB06BE /* RemakeConstraintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemakeConstraintView.h; sourceTree = "<group>"; };
+		F4E55C351CD8881C00AB06BE /* RemakeConstraintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemakeConstraintView.m; sourceTree = "<group>"; };
+		F4E55C371CD88C5900AB06BE /* UseConstantsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseConstantsView.h; sourceTree = "<group>"; };
+		F4E55C381CD88C5900AB06BE /* UseConstantsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseConstantsView.m; sourceTree = "<group>"; };
+		F4E55C3A1CD88ED100AB06BE /* UseEdgesInsetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UseEdgesInsetView.h; sourceTree = "<group>"; };
+		F4E55C3B1CD88ED100AB06BE /* UseEdgesInsetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseEdgesInsetView.m; sourceTree = "<group>"; };
+		F4E55C3D1CD8A43A00AB06BE /* AspectFitWithRatioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AspectFitWithRatioView.h; sourceTree = "<group>"; };
+		F4E55C3E1CD8A43A00AB06BE /* AspectFitWithRatioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AspectFitWithRatioView.m; sourceTree = "<group>"; };
 		F4EAE7751CD440D700559214 /* MasonryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasonryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EAE7791CD440D700559214 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F4EAE77B1CD440D700559214 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -171,6 +186,16 @@
 			children = (
 				F4EAE7C01CD7451500559214 /* BaicView.h */,
 				F4EAE7C11CD7451500559214 /* BaicView.m */,
+				F4E55C311CD87CC000AB06BE /* UpdateConstraintView.h */,
+				F4E55C321CD87CC000AB06BE /* UpdateConstraintView.m */,
+				F4E55C341CD8881C00AB06BE /* RemakeConstraintView.h */,
+				F4E55C351CD8881C00AB06BE /* RemakeConstraintView.m */,
+				F4E55C371CD88C5900AB06BE /* UseConstantsView.h */,
+				F4E55C381CD88C5900AB06BE /* UseConstantsView.m */,
+				F4E55C3A1CD88ED100AB06BE /* UseEdgesInsetView.h */,
+				F4E55C3B1CD88ED100AB06BE /* UseEdgesInsetView.m */,
+				F4E55C3D1CD8A43A00AB06BE /* AspectFitWithRatioView.h */,
+				F4E55C3E1CD8A43A00AB06BE /* AspectFitWithRatioView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -245,17 +270,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E55C3F1CD8A43A00AB06BE /* AspectFitWithRatioView.m in Sources */,
 				F4EAE7B21CD4410E00559214 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				F4EAE7B01CD4410E00559214 /* MASViewConstraint.m in Sources */,
 				F4EAE7C21CD7451500559214 /* BaicView.m in Sources */,
+				F4E55C361CD8881C00AB06BE /* RemakeConstraintView.m in Sources */,
 				F4EAE7AB1CD4410E00559214 /* MASCompositeConstraint.m in Sources */,
 				F4EAE7B11CD4410E00559214 /* NSArray+MASAdditions.m in Sources */,
+				F4E55C391CD88C5900AB06BE /* UseConstantsView.m in Sources */,
+				F4E55C331CD87CC000AB06BE /* UpdateConstraintView.m in Sources */,
 				F4EAE77D1CD440D700559214 /* AppDelegate.m in Sources */,
 				F4EAE7AE1CD4410E00559214 /* MASLayoutConstraint.m in Sources */,
 				F4EAE77A1CD440D700559214 /* main.m in Sources */,
 				F4EAE7B41CD4410E00559214 /* ViewController+MASAdditions.m in Sources */,
 				F4EAE7B31CD4410E00559214 /* View+MASAdditions.m in Sources */,
 				F4EAE7AF1CD4410E00559214 /* MASViewAttribute.m in Sources */,
+				F4E55C3C1CD88ED100AB06BE /* UseEdgesInsetView.m in Sources */,
 				F4EAE7BA1CD7417700559214 /* MasonryTableViewController.m in Sources */,
 				F4EAE7BF1CD743CF00559214 /* SubViewController.m in Sources */,
 				F4EAE7AC1CD4410E00559214 /* MASConstraint.m in Sources */,

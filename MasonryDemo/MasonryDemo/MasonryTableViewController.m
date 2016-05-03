@@ -9,6 +9,11 @@
 #import "MasonryTableViewController.h"
 #import "SubViewController.h"
 #import "BaicView.h"
+#import "UpdateConstraintView.h"
+#import "RemakeConstraintView.h"
+#import "UseConstantsView.h"
+#import "UseEdgesInsetView.h"
+#import "AspectFitWithRatioView.h"
 
 static NSString * const CellReuseIdentifier = @"kCellReuseIdentifier";
 
@@ -26,7 +31,19 @@ static NSString * const CellReuseIdentifier = @"kCellReuseIdentifier";
         self = [super init];
     }
     self.title = @"示例";
-    self.viewClasses = @[BaicView.class];
+    self.viewClasses = @[BaicView.class,
+                         UpdateConstraintView.class,
+                         RemakeConstraintView.class,
+                         UseConstantsView.class,
+                         UseEdgesInsetView.class,
+                         AspectFitWithRatioView.class];
+    
+    self.cellTitles = @{NSStringFromClass(BaicView.class): @"基本布局",
+                        NSStringFromClass(UpdateConstraintView.class): @"约束更新",
+                        NSStringFromClass(RemakeConstraintView.class): @"重加约束",
+                        NSStringFromClass(UseConstantsView.class): @"使用常量约束值",
+                        NSStringFromClass(UseEdgesInsetView.class): @"使用内边距",
+                        NSStringFromClass(AspectFitWithRatioView.class): @"使用宽高比"};
 
     return self;
 }
@@ -54,7 +71,7 @@ static NSString * const CellReuseIdentifier = @"kCellReuseIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellReuseIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", self.viewClasses[indexPath.row]];
+    cell.textLabel.text = self.cellTitles[NSStringFromClass(self.viewClasses[indexPath.row])];
     
     return cell;
 }
@@ -65,7 +82,7 @@ static NSString * const CellReuseIdentifier = @"kCellReuseIdentifier";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Class viewClass = self.viewClasses[indexPath.row];
-    NSString *title = [NSString stringWithFormat:@"%@", viewClass];
+    NSString *title = self.cellTitles[NSStringFromClass(self.viewClasses[indexPath.row])];
     SubViewController *subViewController = [[SubViewController alloc] initWithTitle:title viewClass:viewClass];
     [self.navigationController pushViewController:subViewController animated:YES];
 }

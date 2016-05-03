@@ -46,7 +46,7 @@
         // Layout top and bottom views to each take up half of the window
         [self addSubview:self.topView];
         [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.and.top.equalTo(self);
+            make.left.right.top.equalTo(self);
         }];
         
         [self addSubview:self.bottomView];
