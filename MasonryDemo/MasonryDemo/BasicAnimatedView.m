@@ -10,9 +10,8 @@
 
 @interface BasicAnimatedView()
 
-@property (nonatomic, strong) NSMutableArray *animatableConstraints;
-@property (nonatomic, assign) int padding;
-@property (nonatomic, assign) BOOL animating;
+@property (nonatomic, assign) int width;
+@property (nonatomic, strong) UIView *view;
 
 @end
 
@@ -24,75 +23,37 @@
 }
 
 - (void)addView {
-    UIView *greenView = [UIView new];
-    greenView.backgroundColor = [UIColor greenColor];
-    greenView.layer.borderWidth = 2;
-    greenView.layer.borderColor = [[UIColor blackColor] CGColor];
-    [self addSubview:greenView];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"heart"]];
+    [imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self addSubview:imageView];
     
-    UIView *redView = [UIView new];
-    redView.backgroundColor = [UIColor redColor];
-    redView.layer.borderWidth = 2;
-    redView.layer.borderColor = [[UIColor blackColor] CGColor];
-    [self addSubview:redView];
-    
-    UIView *blueView = [UIView new];
-    blueView.backgroundColor = [UIColor blueColor];
-    blueView.layer.borderWidth = 2;
-    blueView.layer.borderColor = [[UIColor blackColor] CGColor];
-    [self addSubview:blueView];
-    
-    UIView *superview = self;
-    self.padding = 10;
-    UIEdgeInsets insets = UIEdgeInsetsMake(self.padding, self.padding, self.padding, self.padding);
-    self.animatableConstraints = NSMutableArray.new;
-    
-    [greenView mas_makeConstraints:^(MASConstraintMaker *make) {
-        [self.animatableConstraints addObjectsFromArray:@[
-              make.edges.equalTo(superview).insets(insets).priorityLow(), //先设置默认值，等级比较低
-              make.bottom.equalTo(blueView.mas_top).offset(-self.padding)
-        ]];
-        
+    self.width = 50;
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@(self.width));
+        make.height.equalTo(imageView.mas_width);
+        make.centerY.equalTo(self).offset(-30);
+        make.centerX.equalTo(self);
     }];
     
-    [redView mas_makeConstraints:^(MASConstraintMaker *make) {
-        [self.animatableConstraints addObjectsFromArray:@[
-             make.edges.equalTo(superview).insets(insets).priorityLow(),
-             make.bottom.equalTo(blueView.mas_top).offset(-self.padding),
-             make.left.equalTo(greenView.mas_right).offset(self.padding)
-        ]];
-        make.size.equalTo(greenView);
-    }];
+    _view = imageView;
+ 
     
-    [blueView mas_makeConstraints:^(MASConstraintMaker *make) {
-        [self.animatableConstraints addObjectsFromArray:@[
-            make.edges.equalTo(superview).insets(insets).priorityLow()
-        ]];
-        make.height.equalTo(@[redView, greenView]);
-    }];
 }
 
+#pragma - mark 视图回调
+//视图加载后开始动画
 - (void)didMoveToWindow {
-    [self layoutIfNeeded];
-    
-    if (self.window) {
-        self.animating = YES;
-        [self animateWithInvertedInsets:NO];
-    }
+    [self animateWithInvertedInsets:NO];
 }
 
-- (void)willMoveToWindow:(UIWindow *)newWindow {
-    self.animating = newWindow != nil;
-}
 
 - (void)animateWithInvertedInsets:(BOOL)invertedInsets {
-    if (!self.animating) return;
+    self.width = invertedInsets ? 50 : 200;
     
-    int padding = invertedInsets ? 100 : self.padding;
-    UIEdgeInsets paddingInsets = UIEdgeInsetsMake(padding, padding, padding, padding);
-    for (MASConstraint *constraint in self.animatableConstraints) {
-        constraint.insets = paddingInsets;
-    }
+    //更新约束
+    [_view mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@(self.width));
+    }];
     
     [UIView animateWithDuration:1 animations:^{
         [self layoutIfNeeded];
@@ -100,6 +61,7 @@
         //repeat!
         [self animateWithInvertedInsets:!invertedInsets];
     }];
+
 }
 
 

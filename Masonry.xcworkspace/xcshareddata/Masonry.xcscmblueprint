@@ -4,12 +4,12 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "FFE24F389406B1F391DB9871335FD2002CC30A72" : 0,
+    "59B0DD3A0DC0B86D2A06DD4B68CBD1C997876614" : 0,
     "6FC4832245A6A8E50F2A782F20A8B58A46BD1FEB" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EC73E307-414C-4F5D-BDD4-06B3E1A65BA9",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "FFE24F389406B1F391DB9871335FD2002CC30A72" : "",
+    "59B0DD3A0DC0B86D2A06DD4B68CBD1C997876614" : "",
     "6FC4832245A6A8E50F2A782F20A8B58A46BD1FEB" : "Masonry\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Masonry",
@@ -17,14 +17,14 @@
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Masonry.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lizelu\/CollectionViewControllerDemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "59B0DD3A0DC0B86D2A06DD4B68CBD1C997876614"
+    },
+    {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lizelu\/Masonry.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6FC4832245A6A8E50F2A782F20A8B58A46BD1FEB"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lizelu\/CollectionViewControllerDemo.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FFE24F389406B1F391DB9871335FD2002CC30A72"
     }
   ]
 }

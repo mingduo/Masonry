@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F414E2B11CD997AD00B0C035 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = F414E2B01CD997AD00B0C035 /* heart.png */; };
+		F414E2B41CD99E1000B0C035 /* UpdateArrayViews.m in Sources */ = {isa = PBXBuildFile; fileRef = F414E2B31CD99E1000B0C035 /* UpdateArrayViews.m */; };
+		F414E2B71CD9BCB600B0C035 /* UserMarginView.m in Sources */ = {isa = PBXBuildFile; fileRef = F414E2B61CD9BCB600B0C035 /* UserMarginView.m */; };
+		F414E2BA1CD9C06F00B0C035 /* DistributeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F414E2B91CD9C06F00B0C035 /* DistributeView.m */; };
 		F4E55C331CD87CC000AB06BE /* UpdateConstraintView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E55C321CD87CC000AB06BE /* UpdateConstraintView.m */; };
 		F4E55C361CD8881C00AB06BE /* RemakeConstraintView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E55C351CD8881C00AB06BE /* RemakeConstraintView.m */; };
 		F4E55C391CD88C5900AB06BE /* UseConstantsView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E55C381CD88C5900AB06BE /* UseConstantsView.m */; };
@@ -34,6 +38,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F414E2B01CD997AD00B0C035 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		F414E2B21CD99E1000B0C035 /* UpdateArrayViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateArrayViews.h; sourceTree = "<group>"; };
+		F414E2B31CD99E1000B0C035 /* UpdateArrayViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateArrayViews.m; sourceTree = "<group>"; };
+		F414E2B51CD9BCB600B0C035 /* UserMarginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMarginView.h; sourceTree = "<group>"; };
+		F414E2B61CD9BCB600B0C035 /* UserMarginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMarginView.m; sourceTree = "<group>"; };
+		F414E2B81CD9C06F00B0C035 /* DistributeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistributeView.h; sourceTree = "<group>"; };
+		F414E2B91CD9C06F00B0C035 /* DistributeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistributeView.m; sourceTree = "<group>"; };
 		F4E55C311CD87CC000AB06BE /* UpdateConstraintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateConstraintView.h; sourceTree = "<group>"; };
 		F4E55C321CD87CC000AB06BE /* UpdateConstraintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateConstraintView.m; sourceTree = "<group>"; };
 		F4E55C341CD8881C00AB06BE /* RemakeConstraintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemakeConstraintView.h; sourceTree = "<group>"; };
@@ -99,6 +110,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F414E2AF1CD9979B00B0C035 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				F414E2B01CD997AD00B0C035 /* heart.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
 		F4EAE76C1CD440D700559214 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +138,7 @@
 		F4EAE7771CD440D700559214 /* MasonryDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F414E2AF1CD9979B00B0C035 /* Image */,
 				F4EAE7BC1CD7439200559214 /* View */,
 				F4EAE7BB1CD7433400559214 /* Controller */,
 				F4EAE77B1CD440D700559214 /* AppDelegate.h */,
@@ -201,6 +221,12 @@
 				F4E55C3E1CD8A43A00AB06BE /* AspectFitWithRatioView.m */,
 				F4E55C401CD8B85800AB06BE /* BasicAnimatedView.h */,
 				F4E55C411CD8B85800AB06BE /* BasicAnimatedView.m */,
+				F414E2B21CD99E1000B0C035 /* UpdateArrayViews.h */,
+				F414E2B31CD99E1000B0C035 /* UpdateArrayViews.m */,
+				F414E2B51CD9BCB600B0C035 /* UserMarginView.h */,
+				F414E2B61CD9BCB600B0C035 /* UserMarginView.m */,
+				F414E2B81CD9C06F00B0C035 /* DistributeView.h */,
+				F414E2B91CD9C06F00B0C035 /* DistributeView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -262,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F414E2B11CD997AD00B0C035 /* heart.png in Resources */,
 				F4EAE7AA1CD4410E00559214 /* Info.plist in Resources */,
 				F4EAE7881CD440D700559214 /* LaunchScreen.storyboard in Resources */,
 				F4EAE7851CD440D700559214 /* Assets.xcassets in Resources */,
@@ -281,6 +308,7 @@
 				F4EAE7C21CD7451500559214 /* BaicView.m in Sources */,
 				F4E55C361CD8881C00AB06BE /* RemakeConstraintView.m in Sources */,
 				F4EAE7AB1CD4410E00559214 /* MASCompositeConstraint.m in Sources */,
+				F414E2B71CD9BCB600B0C035 /* UserMarginView.m in Sources */,
 				F4EAE7B11CD4410E00559214 /* NSArray+MASAdditions.m in Sources */,
 				F4E55C391CD88C5900AB06BE /* UseConstantsView.m in Sources */,
 				F4E55C331CD87CC000AB06BE /* UpdateConstraintView.m in Sources */,
@@ -288,12 +316,14 @@
 				F4EAE7AE1CD4410E00559214 /* MASLayoutConstraint.m in Sources */,
 				F4EAE77A1CD440D700559214 /* main.m in Sources */,
 				F4EAE7B41CD4410E00559214 /* ViewController+MASAdditions.m in Sources */,
+				F414E2B41CD99E1000B0C035 /* UpdateArrayViews.m in Sources */,
 				F4EAE7B31CD4410E00559214 /* View+MASAdditions.m in Sources */,
 				F4EAE7AF1CD4410E00559214 /* MASViewAttribute.m in Sources */,
 				F4E55C3C1CD88ED100AB06BE /* UseEdgesInsetView.m in Sources */,
 				F4EAE7BA1CD7417700559214 /* MasonryTableViewController.m in Sources */,
 				F4E55C421CD8B85800AB06BE /* BasicAnimatedView.m in Sources */,
 				F4EAE7BF1CD743CF00559214 /* SubViewController.m in Sources */,
+				F414E2BA1CD9C06F00B0C035 /* DistributeView.m in Sources */,
 				F4EAE7AC1CD4410E00559214 /* MASConstraint.m in Sources */,
 				F4EAE7AD1CD4410E00559214 /* MASConstraintMaker.m in Sources */,
 			);

@@ -15,6 +15,8 @@
 #import "UseEdgesInsetView.h"
 #import "AspectFitWithRatioView.h"
 #import "BasicAnimatedView.h"
+#import "UpdateArrayViews.h"
+#import "UserMarginView.h"
 
 static NSString * const CellReuseIdentifier = @"kCellReuseIdentifier";
 
@@ -38,15 +40,19 @@ static NSString * const CellReuseIdentifier = @"kCellReuseIdentifier";
                          UseConstantsView.class,
                          UseEdgesInsetView.class,
                          AspectFitWithRatioView.class,
-                         BasicAnimatedView.class];
+                         BasicAnimatedView.class,
+                         UpdateArrayViews.class,
+                         UserMarginView.class];
     
     self.cellTitles = @{NSStringFromClass(BaicView.class): @"基本布局",
                         NSStringFromClass(UpdateConstraintView.class): @"约束更新",
                         NSStringFromClass(RemakeConstraintView.class): @"重加约束",
-                        NSStringFromClass(UseConstantsView.class): @"使用常量约束值",
+                        NSStringFromClass(UseConstantsView.class): @"使用链式调用添加常量约束值",
                         NSStringFromClass(UseEdgesInsetView.class): @"使用内边距",
                         NSStringFromClass(AspectFitWithRatioView.class): @"使用宽高比",
-                        NSStringFromClass(BasicAnimatedView.class): @"基本动画"};
+                        NSStringFromClass(BasicAnimatedView.class): @"基本动画",
+                        NSStringFromClass(UpdateArrayViews.class): @"使用数组更新动画",
+                        NSStringFromClass(UserMarginView.class): @"使用外边距"};
 
     return self;
 }

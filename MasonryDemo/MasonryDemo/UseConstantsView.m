@@ -26,10 +26,14 @@
     
     
     [redView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
         make.top.equalTo(@20);
         make.left.equalTo(@20);
         make.right.equalTo(@-20);
         make.bottom.equalTo(@-20);
+        
+        //下方链式调用也是可以的
+        //make.top.left.right.bottom.equalTo(@20);
     }];
 
     

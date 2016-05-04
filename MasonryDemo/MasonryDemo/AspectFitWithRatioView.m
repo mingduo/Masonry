@@ -28,8 +28,7 @@
     topInnerView.layer.borderColor = [[UIColor whiteColor] CGColor];
     [topView addSubview:topInnerView];
 
-    
-    
+
     
     
     UIView *bottomView = [UIView new];
