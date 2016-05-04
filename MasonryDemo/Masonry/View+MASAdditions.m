@@ -150,16 +150,21 @@
     MAS_VIEW *closestCommonSuperview = nil;
 
     MAS_VIEW *secondViewSuperview = view;
+    
     while (!closestCommonSuperview && secondViewSuperview) {
+        
         MAS_VIEW *firstViewSuperview = self;
+        
         while (!closestCommonSuperview && firstViewSuperview) {
             if (secondViewSuperview == firstViewSuperview) {
                 closestCommonSuperview = secondViewSuperview;
             }
             firstViewSuperview = firstViewSuperview.superview;
         }
+        
         secondViewSuperview = secondViewSuperview.superview;
     }
+    
     return closestCommonSuperview;
 }
 

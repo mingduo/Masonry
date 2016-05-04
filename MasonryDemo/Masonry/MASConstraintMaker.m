@@ -57,8 +57,10 @@
 }
 
 - (MASConstraint *)constraint:(MASConstraint *)constraint addConstraintWithLayoutAttribute:(NSLayoutAttribute)layoutAttribute {
+    
     MASViewAttribute *viewAttribute = [[MASViewAttribute alloc] initWithView:self.view layoutAttribute:layoutAttribute];
     MASViewConstraint *newConstraint = [[MASViewConstraint alloc] initWithFirstViewAttribute:viewAttribute];
+    
     if ([constraint isKindOfClass:MASViewConstraint.class]) {
         //replace with composite constraint
         NSArray *children = @[constraint, newConstraint];
@@ -67,9 +69,10 @@
         [self constraint:constraint shouldBeReplacedWithConstraint:compositeConstraint];
         return compositeConstraint;
     }
+    
     if (!constraint) {
-        newConstraint.delegate = self;
-        [self.constraints addObject:newConstraint];
+        newConstraint.delegate = self;              //设置代理-MASConstraintDelegate
+        [self.constraints addObject:newConstraint]; //添加进数组
     }
     return newConstraint;
 }

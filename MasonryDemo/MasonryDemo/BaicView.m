@@ -36,7 +36,7 @@
     
     int padding = 10;
     
-    [greenView mas_makeConstraints:^(MASConstraintMaker *make) {
+    NSArray *array = [greenView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.mas_top).offset(padding);
         make.left.equalTo(self.mas_left).offset(padding);
         make.bottom.equalTo(blueView.mas_top).offset(-padding);
@@ -46,6 +46,8 @@
         make.height.equalTo(redView.mas_height);
         make.height.equalTo(blueView.mas_height);
     }];
+    
+    NSLog(@"%@", array);
     
     [redView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.mas_top).offset(padding);
@@ -67,4 +69,5 @@
     }];
     
 }
+
 @end

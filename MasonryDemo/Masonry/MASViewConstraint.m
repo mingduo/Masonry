@@ -120,11 +120,11 @@ static char kInstalledConstraintsKey;
 }
 
 - (void)setSecondViewAttribute:(id)secondViewAttribute {
-    if ([secondViewAttribute isKindOfClass:NSValue.class]) {
+    if ([secondViewAttribute isKindOfClass:NSValue.class]) {        //直接传过来的是Value
         [self setLayoutConstantWithValue:secondViewAttribute];
-    } else if ([secondViewAttribute isKindOfClass:MAS_VIEW.class]) {
+    } else if ([secondViewAttribute isKindOfClass:MAS_VIEW.class]) { //传过来的是一个UIView
         _secondViewAttribute = [[MASViewAttribute alloc] initWithView:secondViewAttribute layoutAttribute:self.firstViewAttribute.layoutAttribute];
-    } else if ([secondViewAttribute isKindOfClass:MASViewAttribute.class]) {
+    } else if ([secondViewAttribute isKindOfClass:MASViewAttribute.class]) {//传过来的是一个约束，如mas_top
         _secondViewAttribute = secondViewAttribute;
     } else {
         NSAssert(NO, @"attempting to add unsupported attribute: %@", secondViewAttribute);
@@ -170,7 +170,7 @@ static char kInstalledConstraintsKey;
 
 - (MASConstraint * (^)(id, NSLayoutRelation))equalToWithRelation {
     return ^id(id attribute, NSLayoutRelation relation) {
-        if ([attribute isKindOfClass:NSArray.class]) {
+        if ([attribute isKindOfClass:NSArray.class]) {      //为数组的情况
             NSAssert(!self.hasLayoutRelation, @"Redefinition of constraint relation");
             NSMutableArray *children = NSMutableArray.new;
             for (id attr in attribute) {
@@ -308,6 +308,7 @@ static char kInstalledConstraintsKey;
     
     MAS_VIEW *firstLayoutItem = self.firstViewAttribute.item;
     NSLayoutAttribute firstLayoutAttribute = self.firstViewAttribute.layoutAttribute;
+    
     MAS_VIEW *secondLayoutItem = self.secondViewAttribute.item;
     NSLayoutAttribute secondLayoutAttribute = self.secondViewAttribute.layoutAttribute;
 
@@ -319,6 +320,10 @@ static char kInstalledConstraintsKey;
         secondLayoutAttribute = firstLayoutAttribute;
     }
     
+    
+#pragma -- Mark 使用NSLayoutConstraint添加约束
+    
+    //创建约束
     MASLayoutConstraint *layoutConstraint
         = [MASLayoutConstraint constraintWithItem:firstLayoutItem
                                         attribute:firstLayoutAttribute
@@ -331,11 +336,13 @@ static char kInstalledConstraintsKey;
     layoutConstraint.priority = self.layoutPriority;
     layoutConstraint.mas_key = self.mas_key;
     
+    //寻找约束添加的View
     if (self.secondViewAttribute.view) {
+        
+        //寻找两个视图的公共父视图
         MAS_VIEW *closestCommonSuperview = [self.firstViewAttribute.view mas_closestCommonSuperview:self.secondViewAttribute.view];
-        NSAssert(closestCommonSuperview,
-                 @"couldn't find a common superview for %@ and %@",
-                 self.firstViewAttribute.view, self.secondViewAttribute.view);
+        
+        NSAssert(closestCommonSuperview,@"couldn't find a common superview for %@ and %@",self.firstViewAttribute.view, self.secondViewAttribute.view);
         self.installedView = closestCommonSuperview;
     } else if (self.firstViewAttribute.isSizeAttribute) {
         self.installedView = self.firstViewAttribute.view;
@@ -350,9 +357,11 @@ static char kInstalledConstraintsKey;
     }
     if (existingConstraint) {
         // just update the constant
+        //更新约束
         existingConstraint.constant = layoutConstraint.constant;
         self.layoutConstraint = existingConstraint;
     } else {
+        //添加约束
         [self.installedView addConstraint:layoutConstraint];
         self.layoutConstraint = layoutConstraint;
         [firstLayoutItem.mas_installedConstraints addObject:self];
